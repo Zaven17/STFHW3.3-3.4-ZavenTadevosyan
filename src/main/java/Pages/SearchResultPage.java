@@ -6,22 +6,20 @@ import org.openqa.selenium.WebDriver;
 
 public class SearchResultPage {
     private WebDriver driver;
-    private By addToCart = By.linkText("Add to cart");
-    private By topSellers = By.linkText("Top sellers");
+    private By legalNotice = By.xpath("/html/body/div/div[2]/div/div[3]/div[1]/section/div/ul/li[2]/a");
+    private By topSellers = By.xpath("/html/body/div/div[2]/div/div[3]/div[1]/div[1]/h4");
     private By categories = By.xpath("/html/body/div/div[2]/div/div[3]/div[1]/div[2]/h2");
-    private By information = By.linkText("Information");
-    private By manufacturers = By.linkText("Manufacturers");
-    private By specials = By.linkText("Specials");
-    private By suppliers = By.linkText("Suppliers");
+    private By information = By.xpath("/html/body/div/div[2]/div/div[3]/div[1]/section/p");
+    //intentional wrong xpath for failure
+    private By manufacturers = By.xpath("da");
+    private By specials = By.xpath("/html/body/div/div[2]/div/div[3]/div[1]/div[4]/p");
+    private By suppliers = By.xpath("/html/body/div/div[2]/div/div[3]/div[1]/div[6]/p");
     private By viewedProducts = By.xpath("/html/body/div/div[2]/div/div[3]/div[1]/div[7]/p");
 
     public SearchResultPage(WebDriver driver){
         this.driver = driver;
     }
 
-    public void clickAddToCart(){
-        driver.findElement(addToCart).click();
-    }
     public void clickTopSeller(){
         driver.findElement(topSellers).click();
     }
@@ -43,5 +41,6 @@ public class SearchResultPage {
     public void clickViewedProducts(){
         driver.findElement(viewedProducts).click();
     }
+    public void clickLegalNotice(){driver.findElement(legalNotice).click();}
 
 }

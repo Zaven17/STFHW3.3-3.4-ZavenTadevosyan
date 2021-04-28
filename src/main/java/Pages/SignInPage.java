@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class SignInPage {
     private WebDriver driver;
-    private By usernameField = By.id("email");
+    private By signInField = By.id("email");
     private By passwordField = By.id("passwd");
     private By loginButton = By.linkText("Sign in");
 
@@ -13,8 +13,8 @@ public class SignInPage {
         this.driver = driver;
     }
 
-    public void setUsername(String username){
-        driver.findElement(usernameField).sendKeys(username);
+    public void setSignInField(String username){
+        driver.findElement(signInField).sendKeys(username);
     }
 
     public void setPassword(String password){

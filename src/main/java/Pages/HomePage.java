@@ -10,17 +10,23 @@ public class HomePage {
         this.driver = driver;
     }
 
-    public SignInPage clickFormAuthentication(){
-        clickLink("Sign in");
+    public SignInPage clickSignIn(){
+        clickXpath("/html/body/div/div[1]/header/div[2]/div/div/nav/div[1]/a");
         return new SignInPage(driver);
     }
 
     public SearchPage clickSearchBtn(){
-        driver.findElement(By.id("search_query_top"));
+        clickXpath("/html/body/div/div[1]/header/div[3]/div/div/div[2]/form/input[4]");
         return new SearchPage(driver);
     }
-    private void clickLink(String linkText){
-        driver.findElement(By.linkText(linkText)).click();
+    public CartPage clicCartPage(){
+        clickXpath("/html/body/div/div[1]/header/div[3]/div/div/div[3]/div/a");
+        return new CartPage(driver);
+    }
+
+
+    private void clickXpath(String xpath){
+        driver.findElement(By.xpath(xpath)).click();
     }
 }
 
